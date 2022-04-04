@@ -8,7 +8,8 @@ const cors = require('cors');
 app.use(cors());
 
 app.get('/questions', (req, res) => {
-  res.send(questions);
+  const { pageSize, pageIndex } = req.params;
+  res.send(questions.slice(pageSize * pageIndex, pageSize * (pageIndex + 1)));
 });
 
 app.get('/applicants', (req, res) => {
