@@ -24,7 +24,7 @@ app.get('/questions/:id', (req, res) => {
 })
 
 app.get('/applicants/:id', (req, res) => {
-  res.send(JSON.stringify({ responseData: applicants.find((question) => applicants.id == req.params.id)}));
+  res.send(JSON.stringify({ responseData: applicants.find((applicants) => applicants.id == req.params.id)}));
 })
 
 app.listen(port, () => {
