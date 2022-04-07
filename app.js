@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 1870;
+const port = 3187;
 const questions = require('./data/questions.json');
 const applicants = require('./data/applicants.json')
 const cors = require('cors');
