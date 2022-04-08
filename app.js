@@ -6,13 +6,17 @@ const test = require('./data/questions.json');
 const applicants = require('./data/applicants.json')
 const cors = require('cors');
 
-
 app.use(cors());
 
-app.get('/questions', (req, res) => {
+app.get('/admin/question', (req, res) => {
   const { pageSize, pageIndex } = req.query;
   const reqData = questions.slice(pageSize * pageIndex, pageSize * (pageIndex + 1))
+  console.log('Sending response')
   res.send({responseData: reqData});
+});
+
+app.post('/admin/question', (req, res) => {
+  console.log(res);
 });
 
 app.get('/applicants', (req, res) => {
